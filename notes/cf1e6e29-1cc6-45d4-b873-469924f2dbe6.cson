@@ -1,0 +1,52 @@
+createdAt: "2018-11-28T10:12:30.073Z"
+updatedAt: "2018-11-28T10:37:50.435Z"
+type: "MARKDOWN_NOTE"
+folder: "72b01804dd2efee9c0c4"
+title: "MiniKube"
+content: '''
+  # MiniKube
+  
+  ## Installation
+  
+  ### With Explanation
+  
+  1. Go to `/opt`
+    - `cd /opt`
+  2. Download KVM2
+    - `sudo curl -LO https://storage.googleapis.com/minikube/releases/latest/docker-machine-driver-kvm2`
+  3. Install KVM2
+    - `sudo install docker-machine-driver-kvm2 /usr/local/bin/`
+  4. Download the latest version of MiniKube - check the version from [Releases · kubernetes/minikube · GitHub](https://github.com/kubernetes/minikube/releases/)
+    - `sudo curl -Lo minikube-v0.30.0 https://storage.googleapis.com/minikube/releases/v0.30.0/minikube-linux-amd64`
+  5. Do a symlink to your executables directory
+    - `ln -s /opt/minikube-v0.30.0 /usr/local/bin/minikube`
+  6. Make the symlink executable
+    - `chmod 750 /usr/local/bin/minikube`
+  7. Test that the `minikube` command can be found 
+    - `which minikube`
+  8. Start MiniKube
+    - 'minikube start'
+  
+  ### TL;DR
+  
+  ```sh
+  #!/bin/sh
+  cd /opt;
+  
+  # install kvm2
+  sudo curl -LO https://storage.googleapis.com/minikube/releases/latest/docker-machine-driver-kvm2;
+  sudo install docker-machine-driver-kvm2 /usr/local/bin/;
+  
+  # install latest minikube
+  VERSION="$(curl -s https://api.github.com/repos/kubernetes/minikube/tags | jq '.[].name' -r | sort -Vr | head -n 1)";
+  sudo curl -Lo minikube-${VERSION} https://storage.googleapis.com/minikube/releases/${VERSION}/minikube-linux-amd64;
+  rm -rf /usr/local/bin/minikube;
+  ln -s /opt/minikube-${VERSION} /usr/local/bin/minikube;
+  chmod 750 /usr/local/bin/minikube;
+  which minikube;
+  minikube status;
+  ```
+'''
+tags: []
+isStarred: false
+isTrashed: false

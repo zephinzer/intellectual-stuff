@@ -1,4 +1,10 @@
 {
-  "folders": [],
+  "folders": [
+    {
+      "key": "72b01804dd2efee9c0c4",
+      "color": "#E8D252",
+      "name": "Kubernetes"
+    }
+  ],
   "version": "1.0"
 }

@@ -1,0 +1,20 @@
+createdAt: "2018-11-28T10:37:59.247Z"
+updatedAt: "2018-11-28T10:39:45.970Z"
+type: "MARKDOWN_NOTE"
+folder: "72b01804dd2efee9c0c4"
+title: "Istio"
+content: '''
+  # Istio
+  
+  ```sh
+  #!/bin/sh
+  cd /opt;
+  
+  VERSION="$(curl -s https://api.github.com/repos/istio/istio/tags | jq '.[].name' -r | sort -Vr | head -n 1)";
+  
+  curl -LO
+  ```
+'''
+tags: []
+isStarred: false
+isTrashed: false
